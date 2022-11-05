@@ -1,0 +1,45 @@
+﻿@model ProjectCuoiky.ViewModels.LogonViewModel
+@{ ViewBag.Title = "Logon";
+                Layout = "~/Views/Share/_Layout.cshtml"; }
+
+<body 
+    <div style="margin-left: 700px; ">
+
+       
+        <div>
+            @Html.ValidationSummary();
+        </div>
+        <fieldset style="width: 300px;">
+            <legend>Login form</legend>
+
+            <div>
+                <img src="~/Content/Images/2.jpg" />
+            </div>
+            @using (Html.BeginForm())
+            {
+        <table>
+            <tr>
+                <td>@Html.LabelFor(c => c.Username, "Email:")</td>
+                <td>@Html.TextBoxFor(c => c.Username)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(c => c.Password, "Password:")</td>
+                <td>@Html.TextBoxFor(c => c.Password)</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Login" />
+                    <input type="reset" value="Reset" />
+                </td>
+            </tr>
+        </table>}
+        </fieldset>
+        <div style="margin-left:130px;">
+            @Html.ActionLink("DangKy" +
+                          "", "Register", null, null);
+        </div>
+       
+    </div>
+</body>
+
